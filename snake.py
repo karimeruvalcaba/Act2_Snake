@@ -1,22 +1,31 @@
-from turtle import *
+#Se mueve one square per time
 from random import randrange
+from turtle import *
+
 from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+
 def change(x, y):
-    "Change snake direction."
+    """Change snake direction."""
     aim.x = x
     aim.y = y
 
+
 def inside(head):
-    "Return True if head inside boundaries."
+    """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
+    return -200 < food.x < 190 and -200 < food.y < 190
+
+
 
 def move():
-    "Move snake forward one segment."
+    """Move snake forward one segment."""
+    if randrange (10) == 0:
+       food.x += 1
     head = snake[-1].copy()
     head.move(aim)
 
@@ -41,7 +50,12 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
+
+        #avanza food 
+    if randrange (10) == 0:
+       food.x += 1
     ontimer(move, 100)
+
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -52,4 +66,4 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
-done()
+done(
