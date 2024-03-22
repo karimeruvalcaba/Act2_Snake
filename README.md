@@ -25,7 +25,7 @@ El código está dividido en varias secciones principales:
 ## Requisitos
 
 Para ejecutar este código, necesitarás tener Python y la biblioteca Turtle instalados en tu sistema. Puedes instalar Turtle ejecutando pip install PythonTurtle.
-Ejecución
+## Ejecución
 
 Para ejecutar el juego, simplemente ejecuta el script Python. La ventana del juego se abrirá y podrás comenzar a jugar de inmediato.
 
